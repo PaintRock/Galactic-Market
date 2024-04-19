@@ -1,7 +1,7 @@
 {
   "name": "movie-gold-v2",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
@@ -28,11 +28,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+
   },
   "browserslist": {
     "production": [
@@ -46,4 +42,3 @@
       "last 1 safari version"
     ]
   }
-}
