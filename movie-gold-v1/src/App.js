@@ -11,23 +11,17 @@ function App() {
 const [movies, setMovies] = useState();
 
 const getMovies = async () => {
-
-  try
-  {
-    
-    const response = await api.get("/api/v1/movies");
+  try {
+    // To get popular movies
+    const response = await api.get("/movie/popular");
     
     console.log(response.data);
-
-    setMovies(response.data);
- 
+    // TMDB API returns movie data in the "results" array
+    setMovies(response.data.results);
   } 
-  catch (err) 
-  {
+  catch (err) {
     console.log(err);
   }
-
-
 }
 
 useEffect(() => {

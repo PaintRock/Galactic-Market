@@ -4,29 +4,28 @@ import { Paper } from '@mui/material';
 
 const Hero = ({movies}) => {
   return (
-    <div className = "movie-carousel-containter">
+    <div className="movie-carousel-container">
       <Carousel>
         {
-            movies.map((movie) =>{
-                return (
-                    <Paper>
-                        <div className = "movie-card-container">
-                            <div className = "movie-card" style={{"--img": 'url(${movie.backdrops[0]})'}}>
-                                <div className= "movie-detail">
-                                    <div className="movie-poster">
-                                        <img src={movie.poster} alt="" />
-                                    </div>
-                                    <div className = "movie-title">
-                                        <h4>{movie.title}</h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </Paper>
-                )
-            })
+          movies && movies.map((movie) => {
+            return (
+              <Paper key={movie.id}>
+                <div className="movie-card-container">
+                <div className="movie-card" style={{"--img": `url(https://image.tmdb.org/t/p/original${movie.backdrop_path})`}}>                    <div className="movie-detail">
+                      <div className="movie-poster">
+                        <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
+                      </div>
+                      <div className="movie-title">
+                        <h4>{movie.title}</h4>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </Paper>
+            )
+          })
         }
-        </Carousel>
+      </Carousel>
     </div>
   )
 }
